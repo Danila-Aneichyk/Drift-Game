@@ -1,4 +1,6 @@
 using System;
+using DriftSystem;
+using Points;
 using UnityEngine;
 
 namespace Car
@@ -25,33 +27,44 @@ namespace Car
     [RequireComponent(typeof(Rigidbody))]
     public class CarMovement : MonoBehaviour
     {
-        private Rigidbody _rb;
-        [SerializeField] private Transform _centreOfMass;
+        [SerializeField] private AnimationCurve _steeringCurve;
+        [SerializeField] private Timer _timer; 
+
         [SerializeField] private Wheel[] _wheels;
 
+        [Header("Car movement values")]
         [SerializeField] private int _motorForce;
+        [SerializeField] private Transform _centreOfMass;
         [SerializeField] private int _brakeForce;
         [SerializeField] private float _brakeInput;
 
         private float _verticalInput;
         private float _horizontalInput;
 
+        private bool _isDrifting = false;
+
         private float _speed;
-        [SerializeField] private AnimationCurve _steeringCurve;
+        private Rigidbody _rb;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
             _rb.centerOfMass = _centreOfMass.localPosition;
+            _timer.TimerExpired += OnTimerExpired;
         }
 
         private void Update()
         {
             Move();
             Brake();
-
             Steering();
             CheckInput();
+        }
+
+        private void OnTimerExpired()
+        {
+            enabled = false; 
+            _rb.velocity = Vector3.zero;
         }
 
         private void Move()
