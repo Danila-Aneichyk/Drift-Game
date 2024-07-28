@@ -8,7 +8,7 @@ namespace DriftSystem
     {
         [SerializeField] private TimerScreen _timerScreen;
         
-        private float _totalTime = 120f;
+        private float _totalTime = 10f;
 
         public event Action TimerExpired;
 

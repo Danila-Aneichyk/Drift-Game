@@ -1360,7 +1360,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverPanel: {fileID: 1064800298}
+  _adButton: {fileID: 1426966984}
   _timer: {fileID: 1288566784}
+  _initializeAds: {fileID: 1624552169}
 --- !u!1 &453459401 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4144942637585884835, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
@@ -2738,7 +2740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &705120830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5162,6 +5164,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5498031613635566048, guid: a1b5dde12454c4d46a23c7e770be65c3, type: 3}
   m_PrefabInstance: {fileID: 1595714306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624552168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624552170}
+  - component: {fileID: 1624552169}
+  m_Layer: 0
+  m_Name: IronSourceAd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624552169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624552168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4029a611057c4d3dba2c04578d663f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _appKey: 1e6fb85a5
+--- !u!4 &1624552170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624552168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5781229, y: 7.184894, z: 10.187201}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1669227267
 Mesh:
   m_ObjectHideFlags: 0
@@ -7003,3 +7050,4 @@ SceneRoots:
   - {fileID: 295617681}
   - {fileID: 410792729}
   - {fileID: 1288566785}
+  - {fileID: 1624552170}
