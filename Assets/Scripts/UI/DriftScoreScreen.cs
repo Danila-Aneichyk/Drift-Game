@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class DriftScoreScreen : MonoBehaviour
+    public class DriftScoreScreen : BaseScreen
     {
         [SerializeField] private GameObject _scorePanel;
         [SerializeField] private TMP_Text _totalScoreText;

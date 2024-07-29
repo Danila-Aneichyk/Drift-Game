@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class TimerScreen : MonoBehaviour
+    public class TimerScreen : BaseScreen
     {
         [SerializeField] private TMP_Text _timerLabel;
 

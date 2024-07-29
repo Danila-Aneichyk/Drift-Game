@@ -5,7 +5,7 @@ using Timer = DriftSystem.Timer;
 
 namespace UI
 {
-    public class GameOverScreen : MonoBehaviour
+    public class GameOverScreen : BaseScreen
     {
         [SerializeField] private GameObject _gameOverPanel;
         [SerializeField] private Button _adButton;
