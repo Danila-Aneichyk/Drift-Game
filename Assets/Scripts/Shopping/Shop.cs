@@ -7,10 +7,33 @@ namespace Shopping
     {
         [SerializeField] private List<GameObject> _carsInShop;
 
+        private int _currentCarIndex;
+
         private void Start()
         {
             EnableFirstCarInShop();
             DisableOtherCarsInShop();
+        }
+
+        public void SwitchCars(int index)
+        {
+            if (_currentCarIndex == 0 && index < 0)
+            {
+                _currentCarIndex = _carsInShop.Count - 1;
+            }
+            else if (_currentCarIndex == _carsInShop.Count - 1 && index > 0)
+            {
+                _currentCarIndex = 0;
+            }
+            else
+            {
+                _currentCarIndex += index;
+            }
+
+            for (int i = 0; i < _carsInShop.Count; i++)
+            {
+                _carsInShop[i].SetActive(i == _currentCarIndex);
+            }
         }
 
         private void DisableOtherCarsInShop()
@@ -24,8 +47,7 @@ namespace Shopping
         private void EnableFirstCarInShop()
         {
             _carsInShop[0].SetActive(true);
+            _currentCarIndex = 0;
         }
-        
-        
     }
 }
